@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, serif;
+}
+body{
+    display: grid;
+    place-items: center;
+    background-color: #A3BCF9;
+}
+.container{
+    border: 1px solid black;
+    width: 400px;
+    height: 370px;
+    margin-top: 30px;
+    background-color: #D1D2F9;
+    box-shadow: 19px 20px;
+}
+h2{
+    margin-top: 10px;
+    text-align: center;
+}
+
+.contx{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+.contx div{
+    width: 80%;
+    
+}
+.div-name label{
+    margin-left: 13%;
+}
+.div-name input{
+    margin-left: 18%;
+    border-bottom: 2px solid black 0;
+    width: 150px;
+    padding: 4px;
+    border: 2px solid #007BFF ; 
+    border-radius: 8px;
+    background-color: #f0f8ff; 
+    font-size: 16px;
+    color: #333; 
+    outline: none; 
+    
+   
+}
+.div-name input:hover{
+    
+    border-bottom: 2px solid black ;
+   
+}
+.div-pass label{
+    margin-left: 13%;
+}
+.div-pass input{
+    margin-left: 10%;
+    border-bottom: 2px solid black 0;
+    width: 150px;
+    padding: 4px;
+    border: 2px solid #007BFF ; 
+    border-radius: 8px;
+    background-color: #f0f8ff; 
+    font-size: 16px;
+    color: #333; 
+    outline: none;
+
+}
+.div-pass input:hover{
+    
+    border-bottom: 2px solid black ;
+
+}
+.div-email label{
+    margin-left: 13%;
+}
+.div-email input{
+    margin-left: 18%;
+    border-bottom: 2px solid black 0;
+    width: 150px;
+    padding: 4px;
+    border: 2px solid #007BFF ; 
+    border-radius: 8px;
+    background-color: #f0f8ff; 
+    font-size: 16px;
+    color: #333; 
+    outline: none;
+
+}
+.div-email input:hover{
+    
+    border-bottom: 2px solid black ;
+
+}
+.div-date label{
+    margin-left: 13%;
+}
+.div-date input{
+    margin-left: 3%;
+    border-bottom: 2px solid black 0;
+    width: 150px;
+    padding: 4px;
+    border: 2px solid #007BFF ; 
+    border-radius: 8px;
+    background-color: #f0f8ff; 
+    font-size: 16px;
+    color: #333; 
+    outline: none;
+    
+}
+.div-date input:hover{
+  
+    border-bottom: 2px solid black ;
+    
+}
+
+.div-accept input{
+    margin-left: 13%;
+    border: 2px solid black;
+
+}
+.div-accept input{
+    margin-left: 13%;
+    border: 2px solid black;
+    
+
+    
+
+}
+#sub-btn{
+    width: 80px;
+    height: 38px;
+    border-radius: 26%;
+    color: white;
+    background-color: green;
+    border: none;
+    font-weight: 600;
+    font-size: 15px;
+}
+.display-data-container{
+    border: 1px solid black;
+    width: 596px;
+    height: 200px;
+    margin-top: 36px;
+    background-color: #D1D2F9;
+    box-shadow: 8px 9px;
+    overflow: scroll;
+}
+.display-data-container::-webkit-scrollbar {
+    width: 12px; 
+}
+.display-data-container::-webkit-scrollbar:hover {
+    background: #A3BCF9; 
+}
+table{
+    margin-top: 10px;
+    border: 1px solid black;
+    width: 100%;
+   
+    border-spacing: 10px 0;
+    border: none;
+    
+}
+#entriesTableBody{
+    border: 2px solid black;
+}
+    </style>
+</head>
+<body>
+    <form id="form">
+        <div class="container">
+            <h2>Registration Form</h2>
+            <div class="contx">
+                <div class="div-name">
+                <label for="name">Name</label>
+                <input required ="text" name="name" placeholder="name" id="name"> 
+                </div>
+                <div class="div-email">
+                    <label for="email">Email</label>
+                    <input required type="email" name="email" placeholder="email" id="email">
+                    </div>
+                <div class="div-pass">
+                <label for="Password">Password</label>
+                <input required type="password" name="password" placeholder="password" id="password">
+                </div> 
+                <div class="div-date">
+                <label for="dob">Date of Birth</label>
+                <input min="1967-11-09" required type="date" name="dob" id="dob">
+                </div>
+                <div class="div-accept">
+                <input  required type="checkbox" name="Accept" id="Accept">
+                <label for="Accept">Accept terms and condition</label>
+                </div>
+                <button type="submit" id="sub-btn">submit</button>
+            </div>
+        </div>
+    </form>
+    <div class="display-data-container">
+        <h2>Entries</h2>
+        <div class="display-items">
+            <table>
+                <thead>
+                <tr>
+                    <th id="td-name">Name</th>
+                    <th id="td-email">Email</th>
+                    <th id="td-passord">Password</th>
+                    <th id="td-dob">Dob</th>
+                    <th id="td-accept">Accepted terms?</th>
+               
+                </tr>
+            </thead>
+            <tbody id="entriesTableBody">
+               
+            </tbody>
+            </table>
+           
+        </div>
+    
+    </div>
+    <br>
+    <br>
+    <a href="/project">&lt;- Back to Project</a>
+
+
+    <script>
+        let userForm = document.getElementById("form");
+let tdName = document.getElementById("td-name");
+let tdEmail = document.getElementById("td-email");
+let tdPassword = document.getElementById("td-password");
+let tdDob = document.getElementById("td-dob");
+let tdAccept = document.getElementById("td-accept");
+const tableBody = document.querySelector("#entriesTableBody");
+// for validation purposes
+const namevalidation = document.getElementById("name");
+const passValidation=document.getElementById("password");
+const dobvVlidation = document.getElementById("dob");
+//end for validation
+const retriveEntries = () => {
+  let entries = localStorage.getItem("userentries");
+  if (entries) {
+    return JSON.parse(entries);
+  } else {
+    return [];
+  }
+  return entries;
+};
+
+let userEntries = retriveEntries();
+const displayEntries = () => {
+  const entries = retriveEntries();
+
+  tableBody.innerHTML = "";
+
+  entries.forEach((entry) => {
+    const row = `
+            <tr>
+                <td>${entry.name}</td>
+                <td>${entry.email}</td>
+                <td>${entry.password}</td>
+                <td>${entry.dob}</td>
+                <td>${entry.acceptTerms}</td>
+            </tr>
+        `;
+    tableBody.innerHTML += row;
+  });
+};
+
+
+document.getElementById('dob').addEventListener('input', function() {
+    const dobvVlidation = document.getElementById('dob');
+    const dobValue = new Date(dobvVlidation.value);
+    const today = new Date();
+
+    const birthYear = dobValue.getFullYear();
+    const birthMonth = dobValue.getMonth();
+    const birthDay = dobValue.getDate();
+
+    const currentYear = today.getFullYear();
+    const currentMonth = today.getMonth();
+    const currentDay = today.getDate();
+
+    let age = currentYear - birthYear;
+
+    if (currentMonth < birthMonth ||(currentMonth === birthMonth && currentDay < birthDay)) 
+        {
+        age--;
+      }
+    
+
+    
+    if (isNaN(age)) {
+        dobvVlidation.setCustomValidity("Please enter a valid date of birth.");
+    } else if (age < 18 || age > 55) {
+        dobvVlidation.setCustomValidity("You must be between 18 and 55 years old.");
+    } else {
+        dobvVlidation.setCustomValidity("");
+    }
+});
+document.getElementById('password').addEventListener('input', function() {
+    const password = document.getElementById("password").value;
+    let pass = password.length;
+    if (pass < 8) {
+        passValidation.setCustomValidity("password must be at least 8 characters!");
+        }
+    else{
+        passValidation.setCustomValidity("");
+    }
+
+});
+document.getElementById('password').addEventListener('input', function() {
+    const password = document.getElementById("password").value;
+    let pass = password.length;
+    if (pass < 8) {
+        passValidation.setCustomValidity("password must be at least 8 characters!");
+        }
+    else{
+        passValidation.setCustomValidity("");
+    }
+
+});
+
+const saveUserForm = (event) => {
+  event.preventDefault();
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const dob = document.getElementById("dob").value;
+  const acceptTerms = document.getElementById("Accept").checked;
+
+  if (!passValidation.checkValidity() || !namevalidation.checkValidity() || !dobvVlidation.checkValidity()) {
+    return; 
+}
+  const entry = {
+    name,
+    email,
+    password,
+    dob,
+    acceptTerms,
+  };
+  userEntries.push(entry);
+
+  localStorage.setItem("userentries", JSON.stringify(userEntries));
+  displayEntries();
+  document.getElementById("form").reset()
+};
+document.addEventListener("DOMContentLoaded", displayEntries);
+userForm.addEventListener("submit", saveUserForm);
+
+    </script>
+</body>
+</html>
