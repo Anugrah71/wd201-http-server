@@ -25,7 +25,7 @@ const todoList = () => {
 
   const toDisplayableList = (list) => {
    return list.map(todo =>{
-    const checkbox = todo.completed ? "[X]" : "[ ]";
+    const checkbox = todo.completed ? "[x]" : "[ ]";
     const displyDate = todo.dueDate === new Date().toISOString().split("T")[0] ? "": `${todo.dueDate}`;
     return `${checkbox} ${todo.title} ${displyDate}`;
    }).join("\n");
@@ -86,3 +86,5 @@ let itemsDueLater = todos.dueLater();
 let formattedItemsDueLater = todos.toDisplayableList(itemsDueLater);
 console.log(formattedItemsDueLater);
 console.log("\n\n");
+
+module.exports = todoList;
